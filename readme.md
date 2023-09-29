@@ -60,7 +60,7 @@ repos:
         always_run: true
 ```
 
-3.  Pre-Commit mit den Einstellungen installieren.
+3. Pre-Commit mit den Einstellungen installieren.
 
 ```bash
 pre-commit install --hook-type pre-commit --hook-type pre-push
@@ -72,6 +72,10 @@ Nun sollten Sie pre-commit installiert haben und nun sollte es bei jedem Commit 
 
 Erklären Sie hier, wie Sie das Passwort aus Ihrer lokalen `.env` auf Azure übertragen.
 
-```
+In den Einstellungen unter Konfiguration gibt es Applikationen Einstellungen, dort kann man die Werte, welche man im `.env` definiert hat, hinzufügen.
 
-```
+![](assets/20230929_153158_image.png)
+
+![](assets/20230929_153235_image.png)
+
+[KreiselmaierDominikLB-324 Webseite](https://kreiselmaierdominiklb-324.azurewebsites.net/)
