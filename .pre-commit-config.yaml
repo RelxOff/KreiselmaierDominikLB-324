@@ -1,0 +1,42 @@
+repos:
+  - repo: https://github.com/ambv/black
+    rev: 23.7.0
+    hooks:
+      - id: black
+        language_version: python3.11
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.0.0
+    hooks:
+      - id: check-byte-order-marker
+      - id: check-case-conflict
+      - id: check-json
+      - id: check-yaml
+      - id: trailing-whitespace
+
+  - repo: local
+    hooks:
+      - id: needs-hash
+        name: commit message needs issues
+        language: pygrep
+        entry: '#\d+'
+        args: [--multiline, --negate]
+        stages: [commit-msg]
+
+      - id: pytest-check
+        name: pytest-check
+        entry: python -m pytest
+        language: system
+        stages: [commit, push]
+        types: [python]
+        pass_filenames: false
+        always_run: true
+
+      - id: auto-format
+        name: Auto Format Python Code
+        entry: python -m black .
+        language: system
+        stages: [commit]
+        types: [python]
+        pass_filenames: true
+        always_run: true
