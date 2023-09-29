@@ -75,16 +75,27 @@ Erklären Sie hier, wie Sie das Passwort aus Ihrer lokalen `.env` auf Azure übe
 In den Einstellungen unter Konfiguration gibt es Applikationen Einstellungen, dort kann man die Werte, welche man im `.env` definiert hat, hinzufügen.
 
 1. Erstelle ein Passwort in der `.env` Datei wie folgt:
+
    ![](assets/20230929_153235_image.png)
+
 2. Nachdem alles auf Azure deployed wurde kann man in den Einstellungen unter Konfiguration die Applikation Einstellungen finden.
+
    ![](assets/20230929_154146_image.png)
+
 3. Danach klickt man auf neue Applikation Einstellung.
+
    ![](assets/20230929_154256_image.png)
+
 4. Und gibt für den Namen "PASSWORD" und das Value "V160/z-&WncB" ein
+
    ![](assets/20230929_154417_image.png)
-5. Man muss noch auf "Save" klicken.
-   ![](assets/20230929_154701_image.png)
-6. Dann klickt man auf "Ok" und es sollte so aussehen.
+
+5. Man muss noch auf "Ok" und dann auf "Save" klicken.
+
+   ![](assets/20230929_154718_image.png)
+
+6. Es sollte zum Schluss so aussehen.
+
    ![](assets/20230929_154459_image.png)
 
 Hier ist die gehostete Webseite:
