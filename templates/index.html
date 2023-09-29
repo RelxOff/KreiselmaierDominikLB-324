@@ -1,34 +1,57 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Diary App</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <style>
+      .happiness {
+        width: 300px;
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+
     <h1>My Diary</h1>
 
     {% if session.logged_in %}
     <h2>Welcome, you are logged in!</h2>
     <a href="/logout">Logout</a>
     <form method="POST" action="/add_entry">
-        <textarea name="content" rows="4" cols="50" placeholder="Write your entry here..."></textarea>
-        <br>
-        <button type="submit">Add Entry</button>
+      <textarea
+        name="content"
+        rows="4"
+        cols="50"
+        placeholder="Write your entry here..."
+      ></textarea>
+      <br />
+      <fieldset class="happiness">
+        <legend>Happiness</legend>
+        <label
+          ><input type="radio" name="happiness" value="🙂" checked />🙂 Happy</label
+        >
+        <label
+          ><input type="radio" name="happiness" value="😐" />😐 Bored</label
+        >
+        <label><input type="radio" name="happiness" value="🙁" />🙁 Sad</label>
+      </fieldset>
+      <br />
+      <button type="submit">Add Entry</button>
     </form>
     <h2>Entries:</h2>
     <ul>
-        {% for entry in entries %}
-        <li>{{ entry.timestamp.strftime('%Y-%m-%d %H:%M:%S') }} - {{ entry.content }}</li>
-        {% endfor %}
+      {% for entry in entries %}
+      <li>
+        {{ entry.timestamp.strftime('%Y-%m-%d %H:%M:%S') }} - {{ entry.content
+        }} - {{ entry.happiness }}
+      </li>
+      {% endfor %}
     </ul>
 
     {% else %}
     <h2>Please log in to view your diary:</h2>
     <a href="/login">Login</a>
     {% endif %}
-
-
-</body>
-
+  </body>
 </html>
